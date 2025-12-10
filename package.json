@@ -1,0 +1,23 @@
+{
+  "name": "financial-analyser",
+  "version": "1.0.0",
+  "description": "Financial Analyser - A SPA for tracking and analyzing personal finances",
+  "main": "backend/server.js",
+  "scripts": {
+    "server": "nodemon backend/server.js",
+    "client": "cd frontend && npm run dev",
+    "dev": "npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
