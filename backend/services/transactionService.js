@@ -40,14 +40,18 @@ class TransactionService {
   }
 
   static createTransaction(data) {
-    Transaction.validate(data);
+    const normalizedData = {
+      ...data,
+      amount: typeof data.amount === 'number' ? data.amount : parseFloat(data.amount)
+    };
+    Transaction.validate(normalizedData);
     const transaction = {
       id: nextId++,
-      type: data.type,
-      category: data.category,
-      amount: parseFloat(data.amount),
-      description: data.description,
-      date: data.date
+      type: normalizedData.type,
+      category: normalizedData.category,
+      amount: normalizedData.amount,
+      description: normalizedData.description,
+      date: normalizedData.date
     };
     transactions.push(transaction);
     return transaction;
@@ -58,14 +62,18 @@ class TransactionService {
     if (index === -1) {
       return null;
     }
-    Transaction.validate(data);
+    const normalizedData = {
+      ...data,
+      amount: typeof data.amount === 'number' ? data.amount : parseFloat(data.amount)
+    };
+    Transaction.validate(normalizedData);
     transactions[index] = {
       ...transactions[index],
-      type: data.type,
-      category: data.category,
-      amount: parseFloat(data.amount),
-      description: data.description,
-      date: data.date
+      type: normalizedData.type,
+      category: normalizedData.category,
+      amount: normalizedData.amount,
+      description: normalizedData.description,
+      date: normalizedData.date
     };
     return transactions[index];
   }

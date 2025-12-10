@@ -15,7 +15,7 @@ class Transaction {
     if (!data.category || typeof data.category !== 'string') {
       throw new Error('Category is required');
     }
-    if (!data.amount || typeof data.amount !== 'number' || data.amount <= 0) {
+    if (data.amount == null || typeof data.amount !== 'number' || data.amount <= 0) {
       throw new Error('Amount must be a positive number');
     }
     if (!data.description || typeof data.description !== 'string') {

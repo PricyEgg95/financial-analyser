@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Transactions from './components/Transactions/Transactions';
