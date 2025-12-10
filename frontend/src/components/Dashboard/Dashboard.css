@@ -1,0 +1,23 @@
+.dashboard {
+  padding: 1rem 0;
+}
+
+.dashboard h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.chart-card {
+  margin-top: 1.5rem;
+}
