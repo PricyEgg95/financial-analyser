@@ -1,6 +1,10 @@
+import { useState } from 'react';
+import AssetDetail from './AssetDetail';
 import './AssetTable.css';
 
 function AssetTable() {
+  const [selectedAsset, setSelectedAsset] = useState(null);
+
   // Placeholder data - will be replaced with real data later
   const assets = [
     {
@@ -10,6 +14,8 @@ function AssetTable() {
       quantity: 10,
       averagePrice: 150.50,
       currentPrice: 175.25,
+      purchaseDate: '2024-01-15',
+      purchaseCount: 3,
     },
     {
       id: 2,
@@ -18,6 +24,8 @@ function AssetTable() {
       quantity: 20,
       averagePrice: 420.00,
       currentPrice: 445.80,
+      purchaseDate: '2023-11-20',
+      purchaseCount: 5,
     },
     {
       id: 3,
@@ -26,8 +34,18 @@ function AssetTable() {
       quantity: 5,
       averagePrice: 320.00,
       currentPrice: 350.00,
+      purchaseDate: '2024-03-10',
+      purchaseCount: 2,
     },
   ];
+
+  const handleRowClick = (asset) => {
+    setSelectedAsset(asset);
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedAsset(null);
+  };
 
   const calculateTotal = (quantity, price) => {
     return (quantity * price).toFixed(2);
@@ -48,6 +66,9 @@ function AssetTable() {
       <div className="table-placeholder-info">
         <p className="info-text">
           📋 Exemple de données - vos actifs s'afficheront ici
+        </p>
+        <p className="info-subtext">
+          💡 Cliquez sur un actif pour voir l'analyse détaillée
         </p>
       </div>
       
@@ -72,7 +93,12 @@ function AssetTable() {
               const isPositive = parseFloat(gain) >= 0;
 
               return (
-                <tr key={asset.id}>
+                <tr 
+                  key={asset.id} 
+                  className="clickable-row"
+                  onClick={() => handleRowClick(asset)}
+                  title="Cliquer pour voir les détails"
+                >
                   <td>{asset.type}</td>
                   <td className="asset-name">{asset.name}</td>
                   <td>{asset.quantity}</td>
@@ -93,6 +119,13 @@ function AssetTable() {
           </tbody>
         </table>
       </div>
+
+      {selectedAsset && (
+        <AssetDetail 
+          asset={selectedAsset} 
+          onClose={handleCloseDetail}
+        />
+      )}
     </div>
   );
 }

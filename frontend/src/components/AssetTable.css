@@ -18,6 +18,13 @@
   font-size: 0.95rem;
 }
 
+.table-placeholder-info .info-subtext {
+  margin: 0.5rem 0 0 0;
+  color: #3498db;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -48,6 +55,17 @@
 
 .asset-table tbody tr:hover {
   background-color: #f8f9fa;
+}
+
+.asset-table tbody tr.clickable-row {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.asset-table tbody tr.clickable-row:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.01);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .asset-name {
