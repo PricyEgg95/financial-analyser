@@ -1,0 +1,70 @@
+.asset-table-container {
+  width: 100%;
+}
+
+.table-placeholder-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #2ecc71;
+}
+
+.table-placeholder-info .info-text {
+  margin: 0;
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.asset-table thead {
+  background-color: #f8f9fa;
+}
+
+.asset-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+}
+
+.asset-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.asset-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.asset-name {
+  font-weight: 600;
+  color: #3498db;
+}
+
+.total-value {
+  font-weight: 600;
+}
+
+.gain {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.loss {
+  color: #e74c3c;
+  font-weight: 600;
+}
